@@ -8,7 +8,7 @@ def String id     = 100000000 + random.nextInt(900000000)
 multibranchPipelineJob("POC/Upstream-Check-For-Changes-Pipeline") {
     branchSources {
         git {
-            id("${id}"i)
+            id("${id}")
             remote('https://github.com/GrabAByte/jenkins-mono-concept.git')
             credentialsId('github-ci')
             includes('*')
