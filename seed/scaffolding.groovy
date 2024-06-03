@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+// PSEUDO CODE ONLY
 def List envs     = ["dev", "staging", "prod"]
 def List projects = ["A", "B", "C"]
 
