@@ -14,6 +14,11 @@ multibranchPipelineJob("POC/Upstream-Check-For-Changes-Pipeline") {
             includes('*')
         }
     }
+    factory {
+        workflowBranchProjectFactory {
+            scriptPath('Jenkinsfile')
+        }
+    }
     orphanedItemStrategy {
         discardOldItems {
             numToKeep(5)
@@ -31,6 +36,11 @@ for (env in envs) {
                     remote('https://github.com/GrabAByte/jenkins-mono-concept.git')
                     credentialsId('github-ci')
                     includes('*')
+                }
+            }
+            factory {
+                workflowBranchProjectFactory {
+                    scriptPath("environments/${env}/${project}/Jenkinsfile")
                 }
             }
             orphanedItemStrategy {
