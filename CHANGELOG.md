@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.1.2] - (13-09-2024)
+fix: (8d838e6) Add MIT License (#6)
+
 ## [0.1.1] - (03-06-2024)
 fix: (419e2b1) Add configuration for parent Jenkinsfile, and include scriptPath to Jenkinsfile for all seed jobs (#5)
 
