@@ -8,23 +8,23 @@ name: CI
 
 jobs:
   get-version:
-    uses: GrabAByte/github-devops-workflows/.github/workflows/getVersion.yml@0.6.4
+    uses: GrabAByte/github-devops-workflows/.github/workflows/getVersion.yml@0.9.3
     with:
       metadataFile: 'metadata.json'
       metadataPath: .
   groovy-lint:
-    uses: GrabAByte/github-devops-workflows/.github/workflows/groovyLint.yml@0.6.4
+    uses: GrabAByte/github-devops-workflows/.github/workflows/groovyLint.yml@0.9.3
     with:
       groovyPath: .
     needs: get-version
   sonar-scan:
-    uses: GrabAByte/github-devops-workflows/.github/workflows/sonarScan.yml@0.6.4
+    uses: GrabAByte/github-devops-workflows/.github/workflows/sonarScan.yml@0.9.3
     secrets:
       WORKFLOW_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     needs: get-version
   update-version:
-    uses: GrabAByte/github-devops-workflows/.github/workflows/updateVersion.yml@0.6.4
+    uses: GrabAByte/github-devops-workflows/.github/workflows/updateVersion.yml@0.9.3
     with:
       gitUsername: 'grababyte'
       gitEmail: 'grababyte@github.com'
